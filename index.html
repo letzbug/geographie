@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Programme</title>
+
+<style>
+:root {
+  --bg-overlay: rgba(7, 27, 58, 0.65);
+  --text-main: #ffffff;
+  --text-soft: #c7d9f2;
+  --accent: #7ab8ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-main);
+  background: transparent;
+}
+
+/* Background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(var(--bg-overlay), var(--bg-overlay)),
+    url("geo.png") center / cover no-repeat;
+}
+
+/* Hero */
+.hero {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2rem, 4vh, 4rem) 1.5rem;
+}
+
+/* Content */
+.hero-content {
+  max-width: 1100px;
+  width: 100%;
+  animation: fadeUp 1s ease forwards;
+}
+
+/* Title */
+.hero h1 {
+  text-align: center;
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+}
+
+/* Timeline */
+.program {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Item */
+.program-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1rem;
+  padding: 1.2rem 1.4rem;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.25s ease;
+}
+
+.program-item:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-2px);
+}
+
+/* Time */
+.time {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Title */
+.title {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+/* Speaker */
+.speaker {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  line-height: 1.4;
+}
+
+/* Footer */
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-content">
+
+    <h1>Au programme</h1>
+
+    <div class="program">
+
+      <div class="program-item">
+        <div class="time">19:00–19:05</div>
+        <div>
+          <div class="title">Mots de bienvenue</div>
+          <div class="speaker">
+            Sonja Jaeger · Université populaire<br>
+            Malte Helfer · Société Luxembourgeoise de Géographie
+          </div>
+        </div>
+      </div>
+
+      <div class="program-item">
+        <div class="time">19:05–19:30</div>
+        <div>
+          <div class="title">Urban Verdichtung zu Lëtzebuerg</div>
+          <div class="speaker">
+            Raphaël Kemmer · géographe chez CO3<br>
+            Lauréat Prix 2025
+          </div>
+        </div>
+      </div>
+
+      <div class="program-item">
+        <div class="time">19:30–19:55</div>
+        <div>
+          <div class="title">Steierungsusätz fir eng flächespuersam Siidlungsentwécklung</div>
+          <div class="speaker">
+            Dr. Caroline Faber · architecte
+          </div>
+        </div>
+      </div>
+
+      <div class="program-item">
+        <div class="time">19:55–20:20</div>
+        <div>
+          <div class="title">Hitzewellen in Luxemburg</div>
+          <div class="speaker">
+            Léo Metz · Service écologique Roeser
+          </div>
+        </div>
+      </div>
+
+      <div class="program-item">
+        <div class="time">20:20–20:45</div>
+        <div>
+          <div class="title">Climate Mapping Luxembourg</div>
+          <div class="speaker">
+            Dr Ivonne Weichold · University of Luxembourg
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      20:45 – 21:15 · Verre de l’amitié 🍷
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
